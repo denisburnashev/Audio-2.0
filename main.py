@@ -34,11 +34,11 @@ class Album:
         print(f'Общая длительность альбома: {total_duration} min')
 
     def __str__(self):
-        return f"Name group: {self.album_name} \n" \
-               f"Name album: {self.group} \n" \
-               f"Tracks: \n" \
-               f"       {' '.join(map(str, self.track_list))}"
-
+            tracks = ''
+            for track in self.track_list:
+              tracks += f'\t\t{track.name} - {track.duration} min\n'
+            res = f"Name group: {self.group}\nName album: {self.album_name}\nTracks:\n{tracks}"
+            return res
 
 
 numb = Track('Numb', 3)
