@@ -4,10 +4,10 @@ class Track:
         self.duration = int(duration)
 
     def show(self):
-        print(f'{self.name} - {self.duration} min.')
+        print(f'{self.name} - {self.duration} min')
 
     def __str__(self):
-        return f'{self.name} - {self.duration} min.'
+        return f'{self.name} - {self.duration} min'
 
     def __lt__(self, other):
         return self.duration < other.duration
@@ -31,14 +31,13 @@ class Album:
     def get_duration(self, albom, total_duration=0):
         for tracks in albom:
             total_duration += tracks.duration
-        print(f'Общая длительность альбома: {total_duration} min.')
+        print(f'Общая длительность альбома: {total_duration} min')
 
     def __str__(self):
         return f"Name group: {self.album_name} \n" \
                f"Name album: {self.group} \n" \
-               f"Tracks: {''.join(str(self.track_list))}"
-
-
+               f"Tracks: \n" \
+               f"       {' '.join(map(str, self.track_list))}"
 
 
 
